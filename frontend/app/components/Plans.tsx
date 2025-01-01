@@ -26,8 +26,8 @@ export default function PaymentPlans({ data }: Plantypes) {
             key={index}
             className={`px-6 py-2 text-lg w-48 sm:w-auto font-semibold ${
               plan.duration === selectedDuration
-                ? "bg-red-500 text-white"
-                : "bg-sky-950 text-white"
+                ? "bg-sky-950 text-white"
+                : "bg-sky-700 text-white"
             }`}
             onClick={() => setSelectedDuration(plan.duration)}
           >

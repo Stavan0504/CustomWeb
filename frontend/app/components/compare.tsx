@@ -10,8 +10,8 @@ import {
 import { Button } from "@/components/ui/button"
 import { compare } from "../types/compareTypes"
 
-export default function Compare({ data }:compare) {
-    
+export default function Compare({ data }: compare) {
+
     return (
         <div className="px-4 sm:px-36 bg-white py-8 sm:py-32 overflow-x-hidden">
             <div className="flex flex-col sm:flex-row justify-between items-center rounded-lg py-8 sm:py-20 px-4 sm:px-20" style={{ backgroundColor: '#da3654' }}>
@@ -35,10 +35,17 @@ export default function Compare({ data }:compare) {
                         </div>
                         <div className="flex flex-col sm:flex-row w-full sm:w-2/3 justify-between items-center mt-6 sm:mt-0 space-y-6 sm:space-y-0 sm:space-x-6">
                             <Select >
-                                <SelectTrigger className="bg-white text-red-500 w-full sm:w-56 h-12 shadow-2xl">
-                                    <SelectValue placeholder={`${compare.products[0]}`} />
+                                <SelectTrigger
+                                    className="bg-white text-sky-950 w-full sm:w-56 h-12 shadow-2xl"
+                                    aria-label={`Select ${compare.products[0]}`}
+                                >
+                                    <SelectValue
+                                        placeholder={`${compare.products[0]}`}
+                                        aria-label={`${compare.products[0]}`}
+                                    />
                                 </SelectTrigger>
-                                <SelectContent className="bg-white text-red-500">
+
+                                <SelectContent className="bg-white text-sky-950">
                                     {compare.products.map((product: any, index: any) => (
                                         <SelectItem key={index} value={product}>{product}</SelectItem>
                                     ))}
@@ -50,10 +57,17 @@ export default function Compare({ data }:compare) {
 
                             {/* Second Select Dropdown */}
                             <Select>
-                                <SelectTrigger className="bg-white text-red-500 shadow-2xl w-full sm:w-56 h-12">
-                                    <SelectValue className="bg-white text-red-500" placeholder={`${compare.products[1]}`} />
+                                <SelectTrigger
+                                    className="bg-white text-sky-950 w-full sm:w-56 h-12 shadow-2xl"
+                                    aria-label={`Select ${compare.products[0]}`}
+                                >
+                                    <SelectValue
+                                        placeholder={`${compare.products[0]}`}
+                                        aria-label={`${compare.products[0]}`}
+                                    />
                                 </SelectTrigger>
-                                <SelectContent className="bg-white text-red-500">
+
+                                <SelectContent className="bg-white text-sky-950">
                                     {compare.products.map((product: any, index: any) => (
                                         <SelectItem key={index} value={product}>{product}</SelectItem>
                                     ))}
@@ -61,7 +75,7 @@ export default function Compare({ data }:compare) {
                             </Select>
 
                             {/* Compare Button */}
-                            <Button className="h-12 sm:w-32 w-full  bg-red-500 text-white hover:bg-red-600">
+                            <Button className="h-12 sm:w-32 w-full  bg-sky-950 text-white hover:bg-red-600" aria-label='Compare'>
                                 Compare
                             </Button>
                         </div>

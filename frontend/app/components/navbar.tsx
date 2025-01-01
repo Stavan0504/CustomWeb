@@ -74,7 +74,7 @@ export default function Navbar({ sections }: NavbarProps) {
         </ul>
       </div>
 
-      <button className="bg-red-500 text-white py-2 sm:scale-125 scale-75 px-6 rounded-full hover:bg-blue-600">
+      <button className="bg-sky-950 text-white py-2 sm:scale-125 scale-75 px-6 rounded-full">
         {sections.button}
       </button>
     </nav>
