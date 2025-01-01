@@ -18,7 +18,7 @@ export default function Scroll({ data }: ScrollTypes) {
             <img
               src={urlFor(item).url()}
               alt="{item.name}"
-              className="w-72 h-56 sm:w-60 sm:h-44 md:w-64 md:h-48 lg:w-72 lg:h-56"
+              className="w-72 h-56 sm:w-60 sm:h-48 md:w-64 md:h-48 lg:w-72 lg:h-[216px]"
             />
           </li>
         ))}
@@ -28,7 +28,7 @@ export default function Scroll({ data }: ScrollTypes) {
             <img
               src={urlFor(item).url()}
               alt="{item.name}"
-              className="w-72 h-56 sm:w-60 sm:h-44 md:w-64 md:h-48 lg:w-72 lg:h-56"
+              className="w-72 h-56 sm:w-60 sm:h-44 md:w-64 md:h-48 lg:w-72 lg:h-[216px]"
             />
           </li>
         ))}

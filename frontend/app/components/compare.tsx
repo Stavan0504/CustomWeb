@@ -52,10 +52,10 @@ export default function Compare({ data }: compare) {
                                 </SelectContent>
                             </Select>
 
-                            {/* VS Label */}
+                            
                             <h1 className='text-3xl sm:text-4xl text-black'>VS</h1>
 
-                            {/* Second Select Dropdown */}
+                            
                             <Select>
                                 <SelectTrigger
                                     className="bg-white text-sky-950 w-full sm:w-56 h-12 shadow-2xl"
@@ -74,7 +74,7 @@ export default function Compare({ data }: compare) {
                                 </SelectContent>
                             </Select>
 
-                            {/* Compare Button */}
+                            
                             <Button className="h-12 sm:w-32 w-full  bg-sky-950 text-white hover:bg-red-600" aria-label='Compare'>
                                 Compare
                             </Button>
