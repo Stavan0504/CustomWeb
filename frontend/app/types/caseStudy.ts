@@ -5,7 +5,7 @@ export interface Case{
     description: string;
     caseImage: SanityImageAssetDocument;
     button: string[]; 
-    assessment:string;
+    assessment:string[];
     text:ContentBlock[];
     }
   }
