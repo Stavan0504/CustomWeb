@@ -31,34 +31,36 @@ export default function CarouselSection({ data }: any) {
 
           {/* Carousel Section */}
           <div className="flex flex-col items-center sm:items-start justify-center pr-6">
-            <Carousel className="w-full max-w-lg">
-              <CarouselContent className="flex space-x-4 sm:space-x-6 overflow-x-auto">
-                {data.reviews.map((review: any, index: any) => (
-                  <CarouselItem
-                    key={index}
-                    className="flex-shrink-0 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] p-6 rounded-lg shadow-md"
-                  >
-                    <p className="mb-4 text-white font-bold">{review.review}</p>
-                    <div className="flex items-center mt-4 space-x-4">
-                      {review.image && (
-                        <Image
-                          src={urlFor(review.image).url()}
-                          alt="{review.name}"
-                          width={40}
-                          height={40}
-                          className="rounded-full"
-                        />
-                      )}
-                      <h2 className="text-lg sm:text-xl font-semibold text-white">{review.author}</h2>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-between mt-4">
-                <CarouselPrevious className="text-black hover:scale-150 hover:shadow-2xl hover:text-white hover:bg-black" />
-                <CarouselNext className="text-black hover:text-white hover:scale-150 hover:shadow-2xl hover:bg-black" />
-              </div>
-            </Carousel>
+          <Carousel className="w-full max-w-lg">
+            <CarouselContent className="flex space-x-6">
+              {data.reviews.map((review: any, index: any) => (
+                <CarouselItem
+                key={index}
+                className="flex-shrink-0 w-full p-6 rounded-lg shadow-md"
+              >
+                <p className="mb-4 text-white font-bold">{review.review}</p>
+              
+                <div className="flex items-center mt-4 space-x-4">
+                  {review.image && (
+                    <Image
+                      src={urlFor(review.image).url()}
+                      alt="{review.name}"
+                      width={40}
+                      height={40}
+                      className="rounded-full"
+                    />
+                  )}
+                  <h2 className="text-lg font-semibold text-white">{review.author}</h2>
+                </div>
+              </CarouselItem>
+              
+              ))}
+            </CarouselContent>
+            <div className="flex justify-between mt-4">
+              <CarouselPrevious className="text-black hover:scale-150 hover: shadow-2xl hover:text-white hover:bg-black" />
+              <CarouselNext className="text-black  hover:text-white  hover:scale-150 hover: shadow-2xl  hover:bg-black" />
+            </div>
+          </Carousel>
           </div>
         </div>
       </div>
