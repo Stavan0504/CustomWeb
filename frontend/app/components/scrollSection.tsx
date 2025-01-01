@@ -44,7 +44,7 @@ export default function Scroll({ data }: ScrollTypes) {
           <img
             src={urlFor(data.buttonImage).url()}
             alt="{data.title}"
-            className="w-32 h-12 sm:w-36 sm:h-14 md:w-40 md:h-16 ml-auto mr-auto lg:ml-14"
+            className="w-32 h-12 sm:w-36 sm:h-14 md:w-[170px] md:h-[65px] ml-auto mr-auto lg:ml-14"
           />
           <button className="bg-[#222549] text-white p-4 sm:p-5 md:p-6 w-56 sm:w-64 md:w-72 h-14 text-xs sm:text-base sm:h-16 font-bold mt-8 rounded-full transition-all duration-500 hover:bg-[#da3654]">
             {data.button}
