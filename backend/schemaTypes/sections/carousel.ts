@@ -1,0 +1,41 @@
+import {defineField,defineType} from 'sanity'
+export default defineType({
+    name:'carousel',
+    type:'object',
+    title:'Carousel',
+    fields:[
+        defineField({
+            name:'title',
+            title:'Title',
+            type:'string'
+        }),
+        defineField({
+            name:'description',
+            title:'Description',
+            type:'blockContent'
+        }),
+        defineField({
+            name:'reviews',
+            title:'Reviews',
+            type:'array',
+            of:[{type:'object',fields:[
+                defineField({
+                    name:'image',
+                    title:'Image',
+                    type:'image'
+                }),
+                defineField({
+                    name:'review',
+                    title:'Review',
+                    type:'text'
+                }),
+                defineField({
+                    name:'author',
+                    title:'Author',
+                    type:'string'
+                })
+            ]}]
+        }),
+        
+    ]
+})

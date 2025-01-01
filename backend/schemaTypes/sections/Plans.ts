@@ -1,0 +1,52 @@
+import {defineField,defineType} from 'sanity'
+
+export default defineType({
+    name:'plans',
+    title:'Plans',
+    type:'object',
+    fields:[
+        defineField({
+            name:'duration',
+            title:'Duration',
+            type:'string',
+        }),
+        defineField({
+            name:'basic',
+            title:'Basic',
+            type:'string',
+        }),
+        defineField({
+            name:'standard',
+            title:'Standard',
+            type:'string',
+        }),
+        defineField({
+            name:'premium',
+            title:'Premium',
+            type:'string',
+        }),
+        defineField({
+            name:'pro',
+            title:'Pro',
+            type:'string',
+        }),
+        defineField({
+            name:'available',
+            title:'Available',
+            type:'array',
+            of:[{type:'object', fields:[
+                defineField({
+                    name:'name',
+                    title:'Name',
+                    type:'string'
+                }),
+                defineField({
+                    name:'offer',
+                    title:'Offer',
+                    type:'array',
+                    of:[{type:'string'}]
+                })
+            ]}]
+        })
+    ]
+})
