@@ -1,7 +1,7 @@
 import { PortableText } from "@portabletext/react";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageAssetDocument } from "@sanity/client";
-import { client } from "../lib/client";
+import { client } from "../app/lib/client";
 import Image from "next/image";
 import {
   Carousel,

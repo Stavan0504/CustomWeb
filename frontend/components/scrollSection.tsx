@@ -3,7 +3,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../app/lib/client";
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-import '../globals.css';
+import '../app/globals.css';
 import { ScrollTypes } from "../app/types/scrollTypes";
 import { customComponents } from "./customComponents";
 
