@@ -1,6 +1,7 @@
 import { SanityImageAssetDocument } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../lib/client";
+import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import '../globals.css';
 import { ScrollTypes } from "../types/scrollTypes";
@@ -15,20 +16,24 @@ export default function Scroll({ data }: ScrollTypes) {
       <ul className="flex animate-infinite-scroll">
         {data.scrollImage.map((item, index) => (
           <li key={index} className="flex-shrink-0 mx-4">
-            <img
+            <Image
+              width={218}
+             height={54}
               src={urlFor(item).url()}
               alt="{item.name}"
-              className="w-[298px] h-56 sm:w-60 sm:h-48 md:w-64 md:h-48 lg:w-72 lg:h-[216px]"
+              className=" sm:w-60 sm:h-48 md:w-64 md:h-48 lg:w-72 lg:h-[216px]"
             />
           </li>
         ))}
 
         {data.scrollImage.map((item, index) => (
           <li key={index + data.scrollImage.length} className="flex-shrink-0 mx-4">
-            <img
+            <Image
               src={urlFor(item).url()}
               alt="{item.name}"
-              className="w-[298px] h-56 sm:w-60 sm:h-44 md:w-64 md:h-48 lg:w-72 lg:h-[216px]"
+              width={218}
+              height={54}
+              className="sm:w-60 sm:h-44 md:w-64 md:h-48 lg:w-72 lg:h-[216px]"
             />
           </li>
         ))}
