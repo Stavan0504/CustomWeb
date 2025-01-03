@@ -30,8 +30,8 @@ export default function Hero({ data }: Herotypes) {
                         loading="eager"
                         src={urlFor(data.homeImage).url()}
                         alt={data.title}
-                        width={538}
-                        height={554}
+                        width={488}
+                        height={501}
                         className="hidden sm:block ml-28 sm:ml-40 max-w-sm sm:max-w-full"
                     />
                 </div>
