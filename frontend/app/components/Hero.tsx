@@ -34,10 +34,11 @@ export default function Hero({ data }: Herotypes) {
                         className="hidden sm:block ml-28 sm:ml-40 sm:w-2/3 max-w-sm sm:max-w-full"
                     />
                 </div>
-
-
             </div>
-            <p className="text-blue-900 text-justify w-full mt-10 sm:mt-20 text-sm px-5 sm:text-2xl">{data.info}</p>
+            <p className="text-blue-900 text-justify mt-10 sm:mt-20 text-sm sm:text-2xl">
+  {data.info}
+</p>
+
         </section>
     );
 }

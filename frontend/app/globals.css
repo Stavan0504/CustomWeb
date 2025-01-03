@@ -152,10 +152,10 @@ body {
     transform:translateX(-50%);
   }
 }
-:root {
+/* :root {
   --font-montserrat: "Montserrat", sans-serif;
   --font-italic : "Italic", sans-serif;
-}
+} */
 
 body {
   font-family: var(--font-montserrat);
