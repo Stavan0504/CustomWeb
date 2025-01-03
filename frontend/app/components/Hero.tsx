@@ -4,6 +4,7 @@ import { SanityImageAssetDocument } from "next-sanity";
 import { client } from "../lib/client";
 import { Herotypes } from "../types/heroTypes";
 import imageUrlBuilder from '@sanity/image-url';
+import Image from "next/image";
 
 export default function Hero({ data }: Herotypes) {
     const builder = imageUrlBuilder(client);
@@ -25,7 +26,7 @@ export default function Hero({ data }: Herotypes) {
                     </div>
                 </div>
                 <div className="flex-1 mt-14 sm:mt-0">
-                    <img src={urlFor(data.homeImage).url()} alt={data.title} className="w-full max-w-sm sm:max-w-full" />
+                    <Image src={urlFor(data.homeImage).url()} alt={data.title} width={600} height={600} className="w-7/12 ml-16 sm:w-1/2 max-w-sm sm:max-w-full" />
                 </div>
             </div>
             <h1 className="text-blue-900 text-justify w-full mt-10 sm:mt-20 text-xl sm:text-2xl">{data.info}</h1>
