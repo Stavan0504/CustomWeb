@@ -31,7 +31,7 @@ export default function Navbar({ sections }: NavbarProps) {
         </ul>
       </div>
 
-      {/* Hamburger Icon */}
+      
       <button
         className="md:hidden text-gray-700 hover:text-blue-500"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -54,7 +54,7 @@ export default function Navbar({ sections }: NavbarProps) {
         </svg>
       </button>
 
-      {/* Mobile Menu */}
+      
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"

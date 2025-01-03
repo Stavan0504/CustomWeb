@@ -33,7 +33,7 @@ export default function Feedback({ data }: feedback) {
                         />
                     </div>
                 </div>
-                {/* Text and Description */}
+                
                 <div className="lg:w-1/2 text-center lg:text-left p-8 sm:p-16 lg:p-20">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-sky-950 mb-4 font-italic leading-tight">{data.title}</h1>
                     <div className="font-montserrat mb-8">
@@ -53,7 +53,7 @@ export default function Feedback({ data }: feedback) {
                     </div>
                 </div>
 
-                {/* Rotating Image */}
+                
                
             </div>
         </div>

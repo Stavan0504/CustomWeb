@@ -15,7 +15,7 @@ export default function Tech({ data }: Techtypes) {
                 <div key={index} className="container mx-auto text-center">
                     <h1 className="text-2xl mb-8 text-blue-600">{tech.name}</h1>
                     
-                    {/* Responsive Grid Layout */}
+                  
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-16 items-center px-4 md:px-36">
                         {tech.image.map((techImage: any, index: number) => (
                             <div

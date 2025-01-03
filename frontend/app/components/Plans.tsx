@@ -19,7 +19,7 @@ export default function PaymentPlans({ data }: Plantypes) {
 
   return (
     <div className="bg-gray-100 py-10">
-      {/* Toggle Buttons */}
+      
       <div className="flex justify-center gap-4 mb-6 flex-wrap">
         {data.duration.map((plan, index) => (
           <button
@@ -36,7 +36,7 @@ export default function PaymentPlans({ data }: Plantypes) {
         ))}
       </div>
 
-      {/* Table Section for Desktop */}
+      
       <div className="hidden sm:block overflow-x-auto px-4 sm:px-10 mt-10 md:mt-36">
         <table className="table-auto w-full mx-auto border-collapse rounded-lg">
           <thead>
@@ -82,11 +82,11 @@ export default function PaymentPlans({ data }: Plantypes) {
               onClick={() => toggleAccordion(plan.name)}
               className="w-full text-left p-4 bg-gray-200 text-gray-800 font-semibold"
             >
-              {plan.name}  <div className="text-red-500">{selectedPlan[plan.name.toLowerCase()]} </div>{/* Plan name (e.g., Basic, Premium, Pro, Standard) */}
+              {plan.name}  <div className="text-sky-950">{selectedPlan[plan.name.toLowerCase()]} </div>{/* Plan name (e.g., Basic, Premium, Pro, Standard) */}
             </button>
             {activeAccordion === plan.name && (
               <div className="p-4 bg-white">
-                <div className="text-3xl font-bold text-red-500 mt-7 mb-5">
+                <div className="text-3xl font-bold text-sky-950 mt-7 mb-5">
                   {selectedPlan[plan.name.toLowerCase()]}
                 </div>
                 {data.features.map((feature, featureIndex) => (

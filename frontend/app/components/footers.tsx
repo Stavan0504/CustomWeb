@@ -10,7 +10,7 @@ export default function Footer({ data }: FooterTypes) {
 
   return (
     <footer className="bg-sky-950 lg:grid lg:grid-cols-5">
-      {/* Image Section */}
+      
       <div className="relative block h-32 lg:col-span-2 lg:h-full">
         <img
           src={urlFor(data.image).url()}
@@ -19,10 +19,10 @@ export default function Footer({ data }: FooterTypes) {
         />
       </div>
 
-      {/* Content Section */}
+      
       <div className="px-4 py-8 sm:py-12 sm:px-6 lg:col-span-3 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          {/* Contact Section */}
+          
           <div>
             <p>
               <span className="text-xs uppercase tracking-wide text-white">{data.Call}</span>
@@ -62,7 +62,7 @@ export default function Footer({ data }: FooterTypes) {
             </ul>
           </div>
 
-          {/* Features Section */}
+          
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {data.features.map((item, index) => (
               <div key={index} className="p-4 border border-gray-700 rounded-lg">
