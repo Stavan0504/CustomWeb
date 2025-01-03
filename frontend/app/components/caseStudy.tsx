@@ -11,7 +11,7 @@ export default function CaseStudy({ data }: Case) {
     
     return (
         <section className="bg-white py-20 px-4 md:px-24 flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-1/2 md:mr-12 mb-8 px-5 md:mb-0">
+            <div className="w-full md:w-1/2 md:mr-12 mb-8 md:mb-0">
                 <h2 className="sm:text-3xl text-sm flex justify-center font-bold text-blue-900 mb-4">{data.title}</h2>
                 <p className="sm:text-xl text-sm flex justify-center text-gray-700 mb-6 ml-4 md:ml-24">{data.description}</p>
                 <Image 
@@ -24,8 +24,8 @@ export default function CaseStudy({ data }: Case) {
                 <ul className="block mt-6">
                     {data.assessment.map((assessment, index) => (
                         <li key={index} className="mt-0 mb-8 mx-0">
-                            <label className="sm:text-base text-xs font-normal flex justify-center leading-[1em] text-[#5d63a9]">{assessment}</label>
-                            <div className="relative z-0 block scale-75 sm:scale-100  [&>*>div]:absolute [&>*>div]:w-auto [&>*>div]:left-0">
+                            <label className="text-base font-normal leading-[1em] text-[#5d63a9]">{assessment}</label>
+                            <div className="relative z-0 block [&>*>div]:absolute [&>*>div]:w-auto [&>*>div]:left-0">
                                 <div className="bg-whitesmoke rounded-full mb-2">
                                     <div className="bg-red-600 rounded-full h-3" style={{ width: `${index === 0 ? 100 : 90}%` }}></div>
                                 </div>
@@ -41,7 +41,7 @@ export default function CaseStudy({ data }: Case) {
                 </ul>
             </div>
             
-            <div className="max-w-lg mb-12 ml-4 md:ml-10 text-black scale-75 md:scale-125">
+            <div className="max-w-lg mb-12 ml-4 md:ml-10 text-black scale-100 md:scale-125">
                 <PortableText value={data.text} components={customComponents} />
             </div>
         </section>
