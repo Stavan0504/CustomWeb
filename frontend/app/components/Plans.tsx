@@ -9,10 +9,10 @@ export default function PaymentPlans({ data }: Plantypes) {
     (plan) => plan.duration === selectedDuration
   );
 
-  // State for toggling visibility of plan details (accordion behavior)
+  
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
 
-  // Function to toggle the accordion for a specific plan
+  
   const toggleAccordion = (planName: string) => {
     setActiveAccordion(activeAccordion === planName ? null : planName);
   };

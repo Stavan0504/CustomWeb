@@ -14,8 +14,8 @@ export default function Tech({ data }: Techtypes) {
             {data.title.techs.map((tech: any, index: number) => (
                 <div key={index} className="container mx-auto text-center">
                     <h1 className="text-2xl mb-8 text-blue-600">{tech.name}</h1>
-                    
-                  
+
+
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-16 items-center px-4 md:px-36">
                         {tech.image.map((techImage: any, index: number) => (
                             <div
@@ -25,9 +25,10 @@ export default function Tech({ data }: Techtypes) {
                                 <Image
                                     width={64}
                                     height={64}
+                                    loading="lazy"
                                     src={urlFor(techImage).url()}
-                                    alt="{techImage.name}"  
-                                    className="w-32 h-32 sm:w-64 sm:h-64 object-contain mb-4"   
+                                    alt="{techImage.name}"
+                                    className="w-32 h-32 sm:w-64 sm:h-64 object-contain mb-4"
                                 />
                             </div>
                         ))}

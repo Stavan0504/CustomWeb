@@ -1,14 +1,19 @@
-import Navbar from "./components/navbar";
+
+import dynamic from "next/dynamic";
 import Hero from "./components/Hero";
-import Case from "./components/caseStudy";
-import PaymentPlans from "./components/Plans";
-import Tech from "./components/techStack";
-import Compare from "./components/compare";
-import Feedback from "./components/feedback";
-import Caraousel from "./components/carousel";
-import Blogs from "./components/Blogs";
-import Footer from "./components/footers";
-import Scroll from "./components/scrollSection";
+
+const Tech = dynamic(() => import('./components/techStack'))
+const Navbar = dynamic(() => import('./components/navbar'))
+const Case = dynamic(() => import('./components/caseStudy'))
+const PaymentPlans = dynamic(() => import('./components/Plans'))
+const Compare = dynamic(() => import('./components/compare'))
+const Feedback = dynamic(() => import('./components/feedback'))
+const Caraousel = dynamic(() => import('./components/carousel'))
+const Blogs = dynamic(() => import('./components/Blogs'))
+const Footer = dynamic(() => import('./components/footers'))
+const Scroll = dynamic(() => import('./components/scrollSection'))
+
+
 export default function ItemMap({ data }: any) {
   return (
     <div>

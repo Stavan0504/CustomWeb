@@ -13,7 +13,7 @@ export default function Hero({ data }: Herotypes) {
         <section className="bg-slate-200 px-5 sm:px-[10%] my-10 h-full">
             <div className="flex flex-col sm:flex-row items-center justify-between w-full">
                 <div className="flex-1 text-center sm:text-left">
-                    <div className="text-blue-900 scale-100 sm:scale-125">
+                    <div className="text-blue-900 scale-90 sm:scale-125 text-base">
                         <PortableText value={data.content} components={customComponents} />
                     </div>
                     <div className="flex flex-col sm:flex-row items-center sm:space-x-4 w-full  sm:w-fit scale-100 sm:scale-125 mb-36 mt-12">
