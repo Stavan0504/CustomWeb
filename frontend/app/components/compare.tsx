@@ -16,8 +16,8 @@ export default function Compare({ data }: compare) {
         <div className="px-4 sm:px-36 bg-white py-8 sm:py-32 overflow-x-hidden">
             <div className="flex flex-col sm:flex-row justify-between items-center rounded-lg py-8 sm:py-20 px-4 sm:px-20" style={{ backgroundColor: '#da3654' }}>
                 <div className="w-full">
-                    <h1 className="text-xl sm:text-2xl text-white mb-4 sm:mb-9">{data.title}</h1>
-                    <b className='text-white font-semibold'>
+                    <h1 className="text-base sm:text-2xl text-white mb-4 sm:mb-9">{data.title}</h1>
+                    <b className='text-white sm:text-base font-semibold'>
                         <PortableText value={data.description} components={customComponents} />
                     </b>
                 </div>

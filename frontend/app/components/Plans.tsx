@@ -24,7 +24,7 @@ export default function PaymentPlans({ data }: Plantypes) {
         {data.duration.map((plan, index) => (
           <button
             key={index}
-            className={`px-6 py-2 text-lg w-48 sm:w-auto font-semibold ${
+            className={`px-6 py-2 sm:text-lg text-xs w-32 sm:w-auto font-semibold ${
               plan.duration === selectedDuration
                 ? "bg-sky-950 text-white"
                 : "bg-sky-700 text-white"
@@ -80,13 +80,13 @@ export default function PaymentPlans({ data }: Plantypes) {
           <div key={plan._key} className="border-b border-gray-300 mb-4">
             <button
               onClick={() => toggleAccordion(plan.name)}
-              className="w-full text-left p-4 bg-gray-200 text-gray-800 font-semibold"
+              className="w-full text-left text-sm sm:text-base p-4 bg-gray-200 text-gray-800 font-semibold"
             >
               {plan.name}  <div className="text-sky-950">{selectedPlan[plan.name.toLowerCase()]} </div>{/* Plan name (e.g., Basic, Premium, Pro, Standard) */}
             </button>
             {activeAccordion === plan.name && (
               <div className="p-4 bg-white">
-                <div className="text-3xl font-bold text-sky-950 mt-7 mb-5">
+                <div className="sm:text-3xl text-sm font-bold text-sky-950 mt-7 mb-5">
                   {selectedPlan[plan.name.toLowerCase()]}
                 </div>
                 {data.features.map((feature, featureIndex) => (

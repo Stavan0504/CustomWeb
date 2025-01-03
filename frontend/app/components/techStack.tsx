@@ -13,14 +13,14 @@ export default function Tech({ data }: Techtypes) {
         <div className="tech bg-slate-100 py-10 overflow-x-hidden">
             {data.title.techs.map((tech: any, index: number) => (
                 <div key={index} className="container mx-auto text-center">
-                    <h1 className="text-2xl mb-8 text-blue-600">{tech.name}</h1>
+                    <h1 className="sm:text-2xl text-sm mb-8 text-blue-600">{tech.name}</h1>
 
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-16 items-center px-4 md:px-36">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mb-10 gap-8 md:gap-16 items-center px-4 md:px-36">
                         {tech.image.map((techImage: any, index: number) => (
                             <div
                                 key={index}
-                                className="flex flex-col w-full h-32 items-center rounded-lg shadow-md border-4 border-dashed border-red-400"
+                                className="flex flex-col w-full sm:h-32 h-20 items-center rounded-lg shadow-md border-4 border-dashed border-red-400"
                             >
                                 <Image
                                     width={64}

@@ -37,7 +37,7 @@ export default function Hero({ data }: Herotypes) {
 
 
             </div>
-            <h1 className="text-blue-900 text-justify w-full mt-10 sm:mt-20 text-xl sm:text-2xl">{data.info}</h1>
+            <h1 className="text-blue-900 text-justify w-full mt-10 sm:mt-20 text-sm px-5 sm:text-2xl">{data.info}</h1>
         </section>
     );
 }
