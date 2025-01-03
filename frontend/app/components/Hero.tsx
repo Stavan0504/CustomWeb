@@ -31,7 +31,7 @@ export default function Hero({ data }: Herotypes) {
                         src={urlFor(data.homeImage).url()}
                         alt={data.title}
                         width={538}
-                        height={540}
+                        height={554}
                         className="hidden sm:block ml-28 sm:ml-40 sm:w-7/12 max-w-sm sm:max-w-full"
                     />
                 </div>
