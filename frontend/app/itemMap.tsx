@@ -1,7 +1,5 @@
-
 import dynamic from "next/dynamic";
 import Hero from "./components/Hero";
-
 const Tech = dynamic(() => import('./components/techStack'))
 const Navbar = dynamic(() => import('./components/navbar'))
 const Case = dynamic(() => import('./components/caseStudy'))
