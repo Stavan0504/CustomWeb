@@ -1,3 +1,12 @@
+import { BlogsProps } from "./blogTypes"
+import { feedback } from "./feedbackTypes"
+import { Herotypes } from "./heroTypes"
+import { SanityImageAssetDocument } from "next-sanity";
+import { Case } from "./caseStudy"
+import { Plantypes } from "./planTypes"
+import { Techtypes } from "./techTypes"
+import { compare } from "./compareTypes"
+import { ScrollTypes } from "./scrollTypes"
 export interface dataTypes{
     data:{
     Slug:{current:string,
@@ -8,10 +17,20 @@ export interface dataTypes{
     _rev:string,
     _type:string,
     _updatedAt:string,
-    sections:Sections[]
+    sections:Section[]
 }
 }
-interface Sections{
-    _key:string,
-    _type:string,
+export interface Section{
+        _type:string,
+        BlogProps:BlogsProps,
+         heading: string; description: any; 
+         blogConent: Blog[]; 
+         button: string; 
 }
+interface Blog {
+    title: string;
+    description: string;
+    image: SanityImageAssetDocument;
+    button: string[]; 
+  }
+  

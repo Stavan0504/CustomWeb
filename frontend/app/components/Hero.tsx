@@ -9,7 +9,6 @@ import Image from "next/image";
 export default function Hero({ data }: Herotypes) {
     const builder = imageUrlBuilder(client);
     const urlFor = (source: SanityImageAssetDocument) => builder.image(source);
-
     return (
         <section className="bg-slate-200 px-5 sm:px-[10%] my-10 h-full">
             <div className="flex flex-col sm:flex-row items-center justify-between w-full">

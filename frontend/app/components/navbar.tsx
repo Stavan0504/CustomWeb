@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface NavbarProps {
@@ -15,7 +16,7 @@ export default function Navbar({ sections }: NavbarProps) {
 
   return (
     <nav className="flex justify-between items-center py-4 px-8 bg-slate-200 shadow-md w-full z-10">
-      <img src={sections.logo} alt={sections.name} className="h-8" />
+      <Image src={sections.logo} alt={sections.name} height={120} width={120} />
       <div className="hidden md:flex space-x-6">
         <ul className="flex space-x-6">
           {sections.links.map((link, i) => (
