@@ -31,7 +31,7 @@ export default function CarouselSection({ data }: any) {
 
           
           <div className="flex flex-col items-center sm:items-start justify-center pr-6">
-          <Carousel className="w-full max-w-lg">
+          <Carousel className="w-full ml-1 sm:ml-0 max-w-lg">
             <CarouselContent className="flex space-x-6">
               {data.reviews.map((review: any, index: any) => (
                 <CarouselItem
@@ -57,7 +57,7 @@ export default function CarouselSection({ data }: any) {
               ))}
             </CarouselContent>
             <div className="flex justify-between mt-4">
-              <CarouselPrevious className="text-black hover:scale-150 hover: shadow-2xl hover:text-white hover:bg-black" />
+              <CarouselPrevious className="text-black hover:scale-150  ml-5 sm:ml-0 hover: shadow-2xl hover:text-white hover:bg-black" />
               <CarouselNext className="text-black  hover:text-white  hover:scale-150 hover: shadow-2xl  hover:bg-black" />
             </div>
           </Carousel>

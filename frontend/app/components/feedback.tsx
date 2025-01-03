@@ -16,7 +16,7 @@ export default function Feedback({ data }: feedback) {
         <div className="relative p-8 sm:p-16 lg:p-40 overflow-y-hidden">
             <div className="flex flex-col lg:flex-row justify-between items-center relative">
             <div className="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
-                    <div className="relative">
+                    <div className="relative overflow-x-hidden overflow-y-hidden">
                         <Image 
                             src={urlFor(data.rotateImage).url()} 
                             alt="Feedback Image" 
