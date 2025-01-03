@@ -46,7 +46,10 @@ export default function Scroll({ data }: ScrollTypes) {
           <PortableText value={data.description} components={customComponents} />
         </div>
         <div className="mt-10 lg:mt-0 lg:mr-20 w-full lg:w-auto text-center">
-          <img
+          <Image
+            height={65}
+            loading="lazy"
+            width={170}
             src={urlFor(data.buttonImage).url()}
             alt="{data.title}"
             className="w-32 h-12 sm:w-36 sm:h-14 md:w-[170px] md:h-[65px] ml-auto mr-auto lg:ml-14"

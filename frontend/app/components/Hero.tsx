@@ -26,8 +26,16 @@ export default function Hero({ data }: Herotypes) {
                     </div>
                 </div>
                 <div className="flex-1 mt-14 sm:mt-0">
-                    <Image src={urlFor(data.homeImage).url()} alt={data.title} width={600} height={600} className="w-5/12 ml-28 sm:ml-40 sm:w-2/3 max-w-sm sm:max-w-full" />
+                    <Image
+                        src={urlFor(data.homeImage).url()}
+                        alt={data.title}
+                        width={600}
+                        height={600}
+                        className="hidden sm:block ml-28 sm:ml-40 sm:w-2/3 max-w-sm sm:max-w-full"
+                    />
                 </div>
+
+
             </div>
             <h1 className="text-blue-900 text-justify w-full mt-10 sm:mt-20 text-xl sm:text-2xl">{data.info}</h1>
         </section>
