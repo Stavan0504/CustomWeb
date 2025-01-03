@@ -3,6 +3,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageAssetDocument } from "@sanity/client";
 import { client } from "../lib/client";
 import { FooterTypes } from "../types/footerTypes";
+import Image from "next/image";
 
 export default function Footer({ data }: FooterTypes) {
   const builder = imageUrlBuilder(client);
@@ -10,19 +11,22 @@ export default function Footer({ data }: FooterTypes) {
 
   return (
     <footer className="bg-sky-950 lg:grid lg:grid-cols-5">
-      
-      <div className="relative block h-32 lg:col-span-2 lg:h-full">
-        <img
+
+      <div className="relative block h-32 lg:col-span-2 lg:h-full border border-red-500">
+        <Image
           src={urlFor(data.image).url()}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          height={500}
+          width={500}
+          className="absolute inset-0 h-full w-full object-cover border border-blue-500"
         />
       </div>
 
-      
+
+
       <div className="px-4 py-8 sm:py-12 sm:px-6 lg:col-span-3 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          
+
           <div>
             <p>
               <span className="text-xs uppercase tracking-wide text-white">{data.Call}</span>
@@ -62,7 +66,7 @@ export default function Footer({ data }: FooterTypes) {
             </ul>
           </div>
 
-          
+
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {data.features.map((item, index) => (
               <div key={index} className="p-4 border border-gray-700 rounded-lg">
