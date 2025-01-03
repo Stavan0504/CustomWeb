@@ -2,8 +2,8 @@ import { PortableText } from "@portabletext/react";
 import { customComponents } from "./customComponents";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageAssetDocument } from "@sanity/client";
-import { client } from "../lib/client";
-import { Case } from "../types/caseStudy";
+import { client } from "../app/lib/client";
+import { Case } from "../app/types/caseStudy";
 import Image from "next/image";
 export default function CaseStudy({ data }: Case) {
     const builder = imageUrlBuilder(client);

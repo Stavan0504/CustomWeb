@@ -1,8 +1,8 @@
 import { PortableText } from "@portabletext/react";
 import { customComponents } from "./customComponents";
 import { SanityImageAssetDocument } from "next-sanity";
-import { client } from "../lib/client";
-import { Herotypes } from "../types/heroTypes";
+import { client } from "../app/lib/client";
+import { Herotypes } from "../app/types/heroTypes";
 import imageUrlBuilder from '@sanity/image-url';
 import Image from "next/image";
 
@@ -39,7 +39,6 @@ export default function Hero({ data }: Herotypes) {
             <p className="text-blue-900 text-justify mt-10 sm:mt-20 text-sm sm:text-2xl">
   {data.info}
 </p>
-
-        </section>
+  </section>
     );
 }

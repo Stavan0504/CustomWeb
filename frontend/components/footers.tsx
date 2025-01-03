@@ -1,7 +1,7 @@
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageAssetDocument } from "@sanity/client";
-import { client } from "../lib/client";
-import { FooterTypes } from "../types/footerTypes";
+import { client } from "../app/lib/client";
+import { FooterTypes } from "../app/types/footerTypes";
 import Image from "next/image";
 
 export default function Footer({ data }: FooterTypes) {

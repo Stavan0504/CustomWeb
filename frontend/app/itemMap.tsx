@@ -1,15 +1,15 @@
 import dynamic from "next/dynamic";
-import Hero from "./components/Hero";
-const Tech = dynamic(() => import('./components/techStack'))
-const Navbar = dynamic(() => import('./components/navbar'))
-const Case = dynamic(() => import('./components/caseStudy'))
-const PaymentPlans = dynamic(() => import('./components/Plans'))
-const Compare = dynamic(() => import('./components/compare'))
-const Feedback = dynamic(() => import('./components/feedback'))
-const Caraousel = dynamic(() => import('./components/carousel'))
-const Blogs = dynamic(() => import('./components/Blogs'))
-const Footer = dynamic(() => import('./components/footers'))
-const Scroll = dynamic(() => import('./components/scrollSection'))
+import Hero from "../components/Hero";
+const Tech = dynamic(() => import('../components/techStack'))
+const Navbar = dynamic(() => import('../components/navbar'))
+const Case = dynamic(() => import('../components/caseStudy'))
+const PaymentPlans = dynamic(() => import('../components/Plans'))
+const Compare = dynamic(() => import('../components/compare'))
+const Feedback = dynamic(() => import('../components/feedback'))
+const Caraousel = dynamic(() => import('../components/carousel'))
+const Blogs = dynamic(() => import('../components/Blogs'))
+const Footer = dynamic(() => import('../components/footers'))
+const Scroll = dynamic(() => import('../components/scrollSection'))
 import { dataTypes } from "./types/dataTypes";
 
 export default function ItemMap({ data }: dataTypes) {

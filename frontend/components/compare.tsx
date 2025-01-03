@@ -8,7 +8,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
-import { compare } from "../types/compareTypes"
+import { compare } from "../app/types/compareTypes"
 
 export default function Compare({ data }: compare) {
 
@@ -54,8 +54,6 @@ export default function Compare({ data }: compare) {
 
                             
                             <h1 className='text-3xl sm:text-4xl text-black'>VS</h1>
-
-                            
                             <Select>
                                 <SelectTrigger
                                     className="bg-white text-sky-950 w-full sm:w-56 h-12 shadow-2xl"
@@ -66,7 +64,6 @@ export default function Compare({ data }: compare) {
                                         aria-label={`${compare.products[0]}`}
                                     />
                                 </SelectTrigger>
-
                                 <SelectContent className="bg-white text-sky-950">
                                     {compare.products.map((product: any, index: any) => (
                                         <SelectItem key={index} value={product}>{product}</SelectItem>

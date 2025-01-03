@@ -1,9 +1,9 @@
 import React from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageAssetDocument } from "@sanity/client";
-import { client } from "../lib/client";
+import { client } from "../app/lib/client";
 import Image from 'next/image';
-import { Techtypes } from "../types/techTypes";
+import { Techtypes } from "../app/types/techTypes";
 
 export default function Tech({ data }: Techtypes) {
     const builder = imageUrlBuilder(client);
@@ -14,8 +14,6 @@ export default function Tech({ data }: Techtypes) {
             {data.title.techs.map((tech: any, index: number) => (
                 <div key={index} className="container mx-auto text-center">
                     <h1 className="text-2xl mb-8 text-blue-600">{tech.name}</h1>
-
-
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-16 items-center px-4 md:px-36">
                         {tech.image.map((techImage: any, index: number) => (
                             <div

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import { Plantypes } from "../types/planTypes";
+import { Plantypes } from "../app/types/planTypes";
 
 export default function PaymentPlans({ data }: Plantypes) {
   const [selectedDuration, setSelectedDuration] = useState("Monthly");

@@ -1,10 +1,10 @@
 import { SanityImageAssetDocument } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
-import { client } from "../lib/client";
+import { client } from "../app/lib/client";
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import '../globals.css';
-import { ScrollTypes } from "../types/scrollTypes";
+import { ScrollTypes } from "../app/types/scrollTypes";
 import { customComponents } from "./customComponents";
 
 export default function Scroll({ data }: ScrollTypes) {
