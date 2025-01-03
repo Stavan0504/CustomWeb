@@ -27,11 +27,12 @@ export default function Hero({ data }: Herotypes) {
                 </div>
                 <div className="flex-1 mt-14 sm:mt-0">
                     <Image
+                        loading="eager"
                         src={urlFor(data.homeImage).url()}
                         alt={data.title}
                         width={538}
                         height={540}
-                        className="hidden sm:block ml-28 sm:ml-40 sm:w-2/3 max-w-sm sm:max-w-full"
+                        className="hidden sm:block ml-28 sm:ml-40 sm:w-7/12 max-w-sm sm:max-w-full"
                     />
                 </div>
             </div>
