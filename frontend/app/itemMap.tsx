@@ -19,7 +19,6 @@ export default function ItemMap({ data }: any) {
     <div>
       {
         data.sections.map((section: any) => {
-          console.log(section._type)
           switch (section._type) {
             case "navbar":
               return <Navbar sections={section} />;
