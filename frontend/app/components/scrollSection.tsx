@@ -19,6 +19,7 @@ export default function Scroll({ data }: ScrollTypes) {
             <Image
               width={218}
              height={54}
+             loading="lazy"
               src={urlFor(item).url()}
               alt="{item.name}"
               className=" sm:w-60 sm:h-48 md:w-64 md:h-48 lg:w-72 lg:h-[216px]"
@@ -32,6 +33,7 @@ export default function Scroll({ data }: ScrollTypes) {
               src={urlFor(item).url()}
               alt="{item.name}"
               width={218}
+              loading="lazy"
               height={54}
               className="sm:w-60 sm:h-44 md:w-64 md:h-48 lg:w-72 lg:h-[216px]"
             />
