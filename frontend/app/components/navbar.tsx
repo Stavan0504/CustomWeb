@@ -16,7 +16,7 @@ export default function Navbar({ sections }: NavbarProps) {
 
   return (
     <nav className="flex justify-between items-center py-4 px-8 bg-slate-200 shadow-md w-full z-10">
-      <Image src={sections.logo} alt={sections.name} height={120} width={120} />
+      <Image src={sections.logo} alt={sections.name} className="sm:h-8 sm:w-64 h-32 w-32" height={120} width={120} />
       <div className="hidden md:flex space-x-6">
         <ul className="flex space-x-6">
           {sections.links.map((link, i) => (
