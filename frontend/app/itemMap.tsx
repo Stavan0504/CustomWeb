@@ -12,13 +12,13 @@ const Caraousel = dynamic(() => import('./components/carousel'))
 const Blogs = dynamic(() => import('./components/Blogs'))
 const Footer = dynamic(() => import('./components/footers'))
 const Scroll = dynamic(() => import('./components/scrollSection'))
+import { dataTypes } from "./types/dataTypes";
 
-
-export default function ItemMap({ data }: any) {
+export default function ItemMap({ data }: dataTypes) {
   return (
     <div>
       {
-        data.sections.map((section: any) => {
+        data.sections.map((section:any) => {
           switch (section._type) {
             case "navbar":
               return <Navbar sections={section} />;
