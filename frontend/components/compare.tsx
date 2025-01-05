@@ -52,7 +52,7 @@ export default function Compare({ data }: compare) {
                                     />
                                 </SelectTrigger>
 
-                                <SelectContent className="bg-white text-sky-950">
+                                <SelectContent className="bg-white">
                                     {compare.products.map((product: any, index: any) => (
                                         <SelectItem key={index} value={product}>{product}</SelectItem>
                                     ))}
@@ -60,7 +60,7 @@ export default function Compare({ data }: compare) {
                             </Select>
 
                             
-                            <h1 className='text-3xl sm:text-4xl text-black'>VS</h1>
+                            <h1 className='text-3xl sm:text-4xl'>VS</h1>
                             <Select onValueChange={(value) => setData2(value)}>
                                 <SelectTrigger
                                     className="bg-white text-sky-950 w-full sm:w-56 h-12 shadow-2xl"
@@ -73,7 +73,7 @@ export default function Compare({ data }: compare) {
                                         onChange={(e) => setData1((e.target as HTMLSelectElement).value)}
                                     />
                                 </SelectTrigger>
-                                <SelectContent className="bg-white text-sky-950">
+                                <SelectContent className="bg-white">
                                     {compare.products.map((product: any, index: any) => (
                                         <SelectItem key={index} value={product}>{product}</SelectItem>
                                     ))}

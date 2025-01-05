@@ -42,7 +42,7 @@ export default function Scroll({ data }: ScrollTypes) {
       </ul>
       <div className="flex flex-col lg:flex-row justify-between items-center rounded-lg py-20 px-6 sm:px-10 md:px-20">
         <div className="px-4 sm:px-8 md:px-10 lg:px-40 w-full lg:w-3/4">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900 mb-5">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bol mb-5">
             {data.title}
           </h1>
           <PortableText value={data.description} components={customComponents} />

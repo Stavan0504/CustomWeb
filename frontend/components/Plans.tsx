@@ -60,7 +60,7 @@ export default function PaymentPlans({ data }: Plantypes) {
               <tr key={featureIndex} className="border-t">
                 <td className="px-4 py-3 text-gray-800 font-bold">{feature}</td>
                 {selectedPlan?.available.map((plan) => (
-                  <td key={plan._key} className="px-4 py-3 text-center text-black">
+                  <td key={plan._key} className="px-4 py-3 text-center">
                     {plan.offer[featureIndex] === "true" ? (
                       <span className="text-green-500 font-semibold">✔</span>
                     ) : plan.offer[featureIndex] === "false" ? (
@@ -91,14 +91,14 @@ export default function PaymentPlans({ data }: Plantypes) {
                 </div>
                 {data.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="mb-4">
-                    <div className="font-bold text-sm text-black">
+                    <div className="font-bold text-sm">
                       {feature}
                     </div>
                     <div className="flex mt-2">
                       {plan.offer[featureIndex] === "true" ? (
-                        <span className="text-green-500 font-semibold">✔</span>
+                        <span className=" font-semibold">✔</span>
                       ) : plan.offer[featureIndex] === "false" ? (
-                        <span className="text-red-500 font-semibold">✖</span>
+                        <span className=" font-semibold">✖</span>
                       ) : (
                         plan.offer[featureIndex]
                       )}
