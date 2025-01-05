@@ -9,7 +9,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "./ui/carousel";
 import { customComponents } from "./customComponents";
 
 export default function CarouselSection({ data }: any) {
@@ -25,11 +25,7 @@ export default function CarouselSection({ data }: any) {
             <h1 className="text-3xl sm:text-4xl lg:text-4xl font-semibold mb-6">{data.title}</h1>
             <PortableText value={data.description} components={customComponents} />
           </div>
-
-          
           <div className="h-1 sm:h-2 lg:h-72 lg:w-[2px] bg-white mx-auto"></div>
-
-          
           <div className="flex flex-col items-center sm:items-start justify-center pr-6">
           <Carousel className="w-full ml-1 sm:ml-0 max-w-lg">
             <CarouselContent className="flex space-x-6">
@@ -53,13 +49,11 @@ export default function CarouselSection({ data }: any) {
                   <h2 className="text-lg font-semibold text-white">{review.author}</h2>
                 </div>
               </CarouselItem>
-              
               ))}
             </CarouselContent>
             <div className="flex justify-between mt-4">
-              <CarouselPrevious className="text-black hover:scale-150  ml-5 sm:ml-0 hover: shadow-2xl hover:text-white hover:bg-black" />
-              <CarouselNext className="text-black  hover:text-white  hover:scale-150 hover: shadow-2xl  hover:bg-black" />
-            </div>
+              <CarouselPrevious className="text-black hover:scale-150 sm:ml-0 hover: shadow-2xl hover:text-white hover:bg-black" />
+              <CarouselNext className="text-black  hover:text-white   hover:scale-150 hover: shadow-2xl  hover:bg-black" />            </div>
           </Carousel>
           </div>
         </div>

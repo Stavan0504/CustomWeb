@@ -36,7 +36,7 @@ export default function Hero({ data }: Herotypes) {
                     />
                 </div>
             </div>
-            <p className="text-blue-900 text-justify mt-10 sm:mt-20 text-sm sm:text-2xl">
+            <p className="text-justify mt-10 sm:mt-20 text-sm sm:text-2xl">
   {data.info}
 </p>
   </section>

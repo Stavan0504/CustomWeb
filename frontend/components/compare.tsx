@@ -1,3 +1,5 @@
+'use client'
+import React from "react"
 import { PortableText } from '@portabletext/react'
 import { customComponents } from './customComponents'
 import {
@@ -9,9 +11,13 @@ import {
 } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
 import { compare } from "../app/types/compareTypes"
+import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 export default function Compare({ data }: compare) {
-
+    const [data1,setData1] = React.useState('')
+    const router = useRouter()
+    const [data2,setData2] = React.useState('')
     return (
         <div className="px-4 sm:px-36 bg-white py-8 sm:py-32 overflow-x-hidden">
             <div className="flex flex-col sm:flex-row justify-between items-center rounded-lg py-8 sm:py-20 px-4 sm:px-20" style={{ backgroundColor: '#da3654' }}>
@@ -34,10 +40,11 @@ export default function Compare({ data }: compare) {
                             </div>
                         </div>
                         <div className="flex flex-col sm:flex-row w-full sm:w-2/3 justify-between items-center mt-6 sm:mt-0 space-y-6 sm:space-y-0 sm:space-x-6">
-                            <Select >
+                            <Select onValueChange={(value) => setData1(value)}>
                                 <SelectTrigger
                                     className="bg-white text-sky-950 w-full sm:w-56 h-12 shadow-2xl"
                                     aria-label={`Select ${compare.products[0]}`}
+                                    
                                 >
                                     <SelectValue
                                         placeholder={`${compare.products[0]}`}
@@ -54,14 +61,16 @@ export default function Compare({ data }: compare) {
 
                             
                             <h1 className='text-3xl sm:text-4xl text-black'>VS</h1>
-                            <Select>
+                            <Select onValueChange={(value) => setData2(value)}>
                                 <SelectTrigger
                                     className="bg-white text-sky-950 w-full sm:w-56 h-12 shadow-2xl"
                                     aria-label={`Select ${compare.products[0]}`}
+                                    
                                 >
                                     <SelectValue
                                         placeholder={`${compare.products[0]}`}
                                         aria-label={`${compare.products[0]}`}
+                                        onChange={(e) => setData1((e.target as HTMLSelectElement).value)}
                                     />
                                 </SelectTrigger>
                                 <SelectContent className="bg-white text-sky-950">
@@ -69,12 +78,15 @@ export default function Compare({ data }: compare) {
                                         <SelectItem key={index} value={product}>{product}</SelectItem>
                                     ))}
                                 </SelectContent>
-                            </Select>
-
-                            
-                            <Button className="h-12 sm:w-32 w-full  bg-sky-950 text-white hover:bg-red-600" aria-label='Compare'>
+                            </Select>       
+                            {/* <Link href={`/Comparision/${data1}Vs${data2}`}>                      */}
+                            <Button
+                                className="h-12 sm:w-32 w-full bg-sky-950 text-white hover:bg-red-600"
+                                aria-label="Compare"
+                            >
                                 Compare
                             </Button>
+                            {/* </Link> */}
                         </div>
                     </div>
                 ))}
