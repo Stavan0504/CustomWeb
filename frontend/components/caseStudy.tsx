@@ -12,7 +12,7 @@ export default function CaseStudy({ data }: Case) {
     return (
         <section className="bg-white py-20 px-4 md:px-24 flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2 md:mr-12 mb-8 md:mb-0">
-                <h2 className="sm:text-3xl text-sm flex justify-center font-bold text-blue-900 mb-4">{data.title}</h2>
+                <h2 className="sm:text-3xl text-sm flex justify-center font-bold  mb-4">{data.title}</h2>
                 <p className="sm:text-xl text-sm flex justify-center text-gray-700 mb-6 ml-4 md:ml-24">{data.description}</p>
                 <Image 
                     src={urlFor(data.caseImage).url()} 

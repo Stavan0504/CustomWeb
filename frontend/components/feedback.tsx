@@ -49,7 +49,7 @@ export default function Feedback({ data }: feedback) {
                                 className="rounded-full" 
                             />
                         </div>
-                        <h1 className="text-xl sm:text-lg lg:text-xl font-semibold text-sky-950 mt-4 lg:mt-0">{data.author}</h1>
+                        <h1 className="text-xl sm:text-lg lg:text-xl font-semibold mt-4 lg:mt-0">{data.author}</h1>
                     </div>
                 </div>
 
