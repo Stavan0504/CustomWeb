@@ -18,8 +18,6 @@ export default function Navbar({ sections }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
       const builder = imageUrlBuilder(client);
       const urlFor = (source: SanityImageAssetDocument) => builder.image(source);
-  
-
   return (
     <nav className="flex justify-between items-center py-4 px-8 bg-slate-200 shadow-md w-full z-10">
       <Image src={urlFor(sections.logo).url()} alt={sections.name} className="sm:h-8 sm:w-64" height={120} width={120} />
@@ -65,14 +63,14 @@ export default function Navbar({ sections }: NavbarProps) {
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:hidden absolute top-16 left-0 right-0 bg-slate-200 p-4 shadow-md`}
+        } md:hidden z-20 absolute top-16 left-0 right-0 bg-slate-200 p-4 shadow-md`}
       >
         <ul className="flex flex-col space-y-4">
           {sections.links.map((link, i) => (
             <li key={i}>
               <a
                 href={link}
-                className="text-lg text-gray-700 hover:text-blue-500"
+                className="text-lg  hover:text-blue-500"
               >
                 {link}
               </a>
