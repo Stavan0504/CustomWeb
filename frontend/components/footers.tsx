@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { SanityImageAssetDocument } from "@sanity/client";
 import Link from "next/link";
+import { FooterData } from "../app/types/footerTypes";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../app/lib/client";
 import { PortableText } from '@portabletext/react';
 import { customComponents } from "./customComponents";
 
-export default async function Footer({data}) {
+export default async function Footer({data}:FooterData) {
     const builder = imageUrlBuilder(client);
     const urlFor = (source: SanityImageAssetDocument) => builder.image(source);
 
