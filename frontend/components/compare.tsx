@@ -16,7 +16,6 @@ import Link from "next/link"
 
 export default function Compare({ data }: compare) {
     const [data1,setData1] = React.useState('')
-    const router = useRouter()
     const [data2,setData2] = React.useState('')
     return (
         <div className="px-4 sm:px-36 bg-white py-8 sm:py-32 overflow-x-hidden">
@@ -65,7 +64,6 @@ export default function Compare({ data }: compare) {
                                 <SelectTrigger
                                     className="bg-white text-sky-950 w-full sm:w-56 h-12 shadow-2xl"
                                     aria-label={`Select ${compare.products[0]}`}
-                                    
                                 >
                                     <SelectValue
                                         placeholder={`${compare.products[0]}`}
@@ -79,14 +77,14 @@ export default function Compare({ data }: compare) {
                                     ))}
                                 </SelectContent>
                             </Select>       
-                            {/* <Link href={`/Comparision/${data1}Vs${data2}`}>                      */}
+                            <Link href={`/Comparision/${data1}Vs${data2}`}>                     
                             <Button
                                 className="h-12 sm:w-32 w-full bg-sky-950 text-white hover:bg-red-600"
                                 aria-label="Compare"
                             >
                                 Compare
                             </Button>
-                            {/* </Link> */}
+                            </Link>
                         </div>
                     </div>
                 ))}
