@@ -13,7 +13,7 @@ export default function Blogs({ data }: BlogsProps) {
 
   return (
     <div className="px-4 sm:px-20 lg:px-40 py-10">
-      <div className="relative px-5 py-16 overflow-y-hidden bg-gradient-to-br from-blue-400 via-sky-200 to-pink-500">
+      <div className="relative px-5 py-16 overflow-y-hidden bg-gradient-to-br">
         <div className="flex flex-col items-center min-h-screen">
           <div className="py-16 text-center">
             <h1 className="text-3xl sm:text-4xl font-bold text-sky-900 mb-6">{data.heading}</h1>
@@ -38,7 +38,7 @@ export default function Blogs({ data }: BlogsProps) {
                 <div className="p-6">
                   <div className="grid grid-cols-2 gap-4">
                     {blog.button.map((button, index) => (
-                      <p className="bg-red-900 text-white transition-all duration-700 mb-3 hover:text-red-900 hover:bg-gray-200 rounded-lg p-4 text-xs h-10 flex justify-center">
+                      <p className="transition-all duration-700 mb-3 hover:text-red-900 hover:bg-gray-200 rounded-lg p-4 text-xs h-10 flex justify-center">
                         {button}
                       </p>
                     ))}

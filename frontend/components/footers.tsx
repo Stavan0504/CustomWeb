@@ -1,102 +1,69 @@
-import imageUrlBuilder from "@sanity/image-url";
-import { SanityImageAssetDocument } from "@sanity/client";
-import { client } from "../app/lib/client";
-import { FooterTypes } from "../app/types/footerTypes";
 import Image from "next/image";
+import { SanityImageAssetDocument } from "@sanity/client";
+import Link from "next/link";
+import imageUrlBuilder from "@sanity/image-url";
+import { client } from "../app/lib/client";
+import { PortableText } from '@portabletext/react';
+import { customComponents } from "./customComponents";
 
-export default function Footer({ data }: FooterTypes) {
-  const builder = imageUrlBuilder(client);
-  const urlFor = (source: SanityImageAssetDocument) => builder.image(source);
+export default async function Footer({data}) {
+    const builder = imageUrlBuilder(client);
+    const urlFor = (source: SanityImageAssetDocument) => builder.image(source);
 
   return (
-    <footer className="bg-sky-950 lg:grid lg:grid-cols-5">
-
-      <div className="relative block h-32 lg:col-span-2 lg:h-full border border-red-500">
-        <Image
-          src={urlFor(data.image).url()}
-          alt=""
-          height={500}
-          width={500}
-          className="absolute inset-0 h-full w-full object-cover border border-blue-500"
-        />
-      </div>
-
-
-
-      <div className="px-4 py-8 sm:py-12 sm:px-6 lg:col-span-3 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-
-          <div>
-            <p>
-              <span className="text-xs uppercase tracking-wide text-white">{data.Call}</span>
-              <a
-                href="#"
-                className="block text-xl sm:text-2xl lg:text-3xl font-medium text-white hover:opacity-75"
-              >
-                {data.number}
-              </a>
-            </p>
-
-            <ul className="mt-4 space-y-1 text-sm text-white">
-              <li>{data.timings}</li>
-            </ul>
-
-            <ul className="mt-6 flex flex-wrap gap-4 sm:gap-6">
-              {data.social.map((item, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    <span className="sr-only">{item.socialTitle}</span>
-                    <svg
-                      className="w-6 h-6 sm:w-8 sm:h-8"
-                      viewBox="0 0 24 24"
-                      fill="#FFFFFF"
-                      aria-hidden="true"
-                    >
-                      <path fillRule="evenodd" d={item.Path} clipRule="evenodd" />
-                    </svg>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {data.features.map((item, index) => (
-              <div key={index} className="p-4 border border-gray-700 rounded-lg">
-                <p className="font-medium text-white text-lg mb-2">{item.featuresTitle}</p>
-                <ul className="mt-2 space-y-2 text-sm">
-                  {item.featuresContent.map((content, contentIndex) => (
-                    <li key={contentIndex}>
-                      <a href="#" className="text-white transition hover:opacity-75">
-                        {content}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+    <footer>
+      <div className="flex flex-col lg:flex-row justify-between items-center rounded-lg py-20 px-6 sm:px-10 md:px-20">
+        <div className="px-4 sm:px-8 md:px-10 lg:px-40 w-full lg:w-3/4">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bol mb-5">
+            {data.title}
+          </h1>
+          <PortableText value={data.description} components={customComponents} />
         </div>
-
-        {/* Bottom Section */}
-        <div className="mt-8 sm:mt-12 border-t border-gray-700 pt-8">
-          <div className="sm:flex sm:items-center sm:justify-between">
-            <ul className="flex flex-wrap gap-4 text-xs">
-              {data.content.map((item, index) => (
-                <li key={index}>
-                  <a href="#" className="text-white transition hover:opacity-75">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-10 lg:mt-0 lg:mr-20 w-full lg:w-auto text-center">
+          <Image
+            height={65}
+            loading="lazy"
+            width={170}
+            src={urlFor(data.footerLogo).url()}
+            alt="{data.title}"
+            className="w-32 h-12 sm:w-36 sm:h-14 md:w-[170px] md:h-[65px] ml-auto mr-auto lg:ml-14"
+          />
+          <button className="bg-[#222549] text-white p-4 sm:p-5 md:p-6 w-56 sm:w-64 md:w-72 h-14 text-xs sm:text-base sm:h-16 font-bold mt-8 rounded-full transition-all duration-500 hover:bg-[#da3654]">
+            {data.button}
+          </button>
+        </div>
+      </div>
+      
+      <div className="py-4 px-2 sm:px-6 bg-[#222549] lg:px-[10%] text-white flex flex-col md:flex-row items-center justify-between">
+        
+        <div className="flex items-center md:mb-0">
+          {data.footerLogo && (
+            <Image
+              src={urlFor(data.buttonImage).url()}
+              alt="Footer Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+          )}
+        </div>
+    
+        <ul className="flex flex-wrap justify-center md:justify-start space-x-8 text-xl">
+          {data.footerItems.map((item, index) => (
+            <li key={index} className="hover:underline">
+              {item.label}
+            </li>
+          ))}
+        </ul>
+       
+        <div className="text-center md:text-right text-xl mt-4 md:mt-0">
+          <Link
+            href={`mailto:${data.footerEmail}`}
+            className="underline hover:text-gray-300"
+          >
+            {data.footerEmail}
+          </Link>
+          <p className="text-gray-400 mt-2">{data.footerCopyright}</p>
         </div>
       </div>
     </footer>

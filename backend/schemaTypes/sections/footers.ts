@@ -1,72 +1,64 @@
-import { defineField,defineType } from "sanity";
+import { defineField, defineType } from "sanity";
+
 export default defineType({
     name: "footerSection",
     title: "Footer",
     type: "object",
     fields: [
         defineField({
-            name:'image',
-            title:'Image',
-            type:'image',
+            name: "footerLogo",
+            title: "Footer Logo",
+            type: "image",
         }),
         defineField({
-            name: "title",
-            type: "string",
-            title: "Title",
-        }),
-        defineField({
-            name: "timings",
-            type: "text",
-            title: "Timings",
-        }),
-        defineField({
-            name: "Call",
-            type: "string",
-            title: "Call",
-        }),
-        defineField({
-            name: "number",
-            type: "string",
-            title: "Number",
-        }),
-        defineField({
-            name:'features',
-            type:'array',
-            of:[{type:"object",fields:[
-                defineField({
-                    name:'featuresTitle',
-                    type:'string',
-                    title:'Title',
-                }),
-                defineField({
-                    name:'featuresContent',
-                    type:'array',
-                    of:[{type:'string'}]
-                })
-            ]}]
-        }),
-        defineField({
-            name:'social',
-            type:'array',
-            of:[{type:"object",fields:[defineField({
-                name:'socialTitle',
-                type:'string',
-                title:'Title',
-            }),
-            defineField({
-                name:'Path',
-                type:'string',
-                title:'Path',
-            })]}
+            name: 'button',
+            type: 'string',
+            title: 'Button',
                 
-            ]
         }),
         defineField({
-            name:'content',
-            type:'array',
-            of:[{type:"string"}]
-
-        })
-        ],
-})
-console.log('This is footer');
+            name:'buttonImage',
+            type:'image',
+            title:'Button Image',
+        }),
+        defineField({
+            name: 'title',
+            type: 'string',
+            title: 'Title',
+        }),
+        defineField({
+            name: 'description',
+            type: 'blockContent',
+            title: 'Description',
+        }),
+        defineField({
+            name: "footerItems",
+            title: "Footer Items",
+            type: "array",
+            of: [
+                defineField({
+                    name: "footerItem",
+                    title: "Footer Item",
+                    type: "object",
+                    fields: [
+                        defineField({
+                            name: "label",
+                            title: "Label",
+                            type: "string",
+                        }),
+                    ],
+                }),
+            ],
+        }),
+        defineField({
+            name: "footerEmail",
+            title: "Footer Email",
+            type: "string",
+        }),
+        defineField({
+            name: "footerCopyright",
+            title: "Footer Copyright",
+            type: "string",
+        }),
+    ],
+});

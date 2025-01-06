@@ -3,15 +3,13 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageAssetDocument } from "@sanity/client";
 import { client } from "../app/lib/client";
 import Image from "next/image";
-import dynamic from 'next/dynamic';
-
-// Dynamically import Carousel components
-// const Carousel = dynamic(() => import('shad-cn/Carousel'));
-// const CarouselItem = dynamic(() => import('shad-cn/CarouselItem'));
-// const CarouselContent = dynamic(() => import('shad-cn/CarouselContent'));
-// const CarouselNext = dynamic(() => import('shad-cn/CarouselNext'));
-// const CarouselPrevious = dynamic(() => import('shad-cn/CarouselPrevious'));
-
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 import { customComponents } from "./customComponents";
 
 export default function CarouselSection({ data }: any) {
@@ -22,39 +20,43 @@ export default function CarouselSection({ data }: any) {
     <div className="px-4 sm:px-8 lg:px-40">
       <div className="relative p-8 sm:p-12 lg:p-16 overflow-y-hidden bg-gradient-to-r from-indigo-800 via-purple-800 to-pink-800">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center gap-8">
+          
           <div className="flex flex-col justify-center text-white px-6">
             <h1 className="text-3xl sm:text-4xl lg:text-4xl font-semibold mb-6">{data.title}</h1>
             <PortableText value={data.description} components={customComponents} />
           </div>
           <div className="h-1 sm:h-2 lg:h-72 lg:w-[2px] bg-white mx-auto"></div>
           <div className="flex flex-col items-center sm:items-start justify-center pr-6">
-            {/* <Carousel className="w-full ml-1 sm:ml-0 max-w-lg">
-              <CarouselContent className="flex space-x-6">
-                  <CarouselItem
-                    key={index}
-                    className="flex-shrink-0 w-full p-6 rounded-lg shadow-md"
-                  >
-                    <p className="mb-4 text-white font-bold">{review.review}</p>
-                    <div className="flex items-center mt-4 space-x-4">
-                      {review.image && (
-                        <Image
-                          src={urlFor(review.image).url()}
-                          alt="{review.name}"
-                          width={40}
-                          height={40}
-                          className="rounded-full"
-                        />
-                      )}
-                      <h2 className="text-lg font-semibold text-white">{review.author}</h2>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-between mt-4">
-                <CarouselPrevious className="text-black hover:scale-150 sm:ml-0 hover: shadow-2xl hover:text-white hover:bg-black" />
-                <CarouselNext className="text-black hover:text-white hover:scale-150 hover: shadow-2xl hover:bg-black" />
+          <Carousel className="w-full ml-1 sm:ml-0 max-w-lg">
+            <CarouselContent className="flex space-x-6">
+              {data.reviews.map((review: any, index: any) => (
+                <CarouselItem
+                key={index}
+                className="flex-shrink-0 w-full p-6 rounded-lg shadow-md"
+              >
+                <p className="mb-4 text-white font-bold">{review.review}</p>
+              
+                <div className="flex items-center mt-4 space-x-4">
+                  {review.image && (
+                    <Image
+                      src={urlFor(review.image).url()}
+                      alt="{review.name}"
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      className="rounded-full"
+                    />
+                  )}
+                  <h2 className="text-lg font-semibold text-white">{review.author}</h2>
+                </div>
+              </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-between mt-4">
+              <CarouselPrevious className="text-black sm:ml-0" />
+              <CarouselNext className="text-black" />           
               </div>
-            </Carousel> */}
+          </Carousel>
           </div>
         </div>
       </div>
