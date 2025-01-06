@@ -1,10 +1,13 @@
 'use client'
+import { SanityImageAssetDocument } from "next-sanity";
 import Image from "next/image";
 import React, { useState } from "react";
+import imageUrlBuilder from "@sanity/image-url";
+import { client } from "../app/lib/client";
 
 interface NavbarProps {
   sections: {
-    logo: string;
+    logo: SanityImageAssetDocument;
     name: string;
     links: string[];
     button: string;
@@ -13,10 +16,13 @@ interface NavbarProps {
 
 export default function Navbar({ sections }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+      const builder = imageUrlBuilder(client);
+      const urlFor = (source: SanityImageAssetDocument) => builder.image(source);
+  
 
   return (
     <nav className="flex justify-between items-center py-4 px-8 bg-slate-200 shadow-md w-full z-10">
-      <Image src={sections.logo} alt={sections.name} className="sm:h-8 sm:w-64" height={120} width={120} />
+      <Image src={urlFor(sections.logo).url()} alt={sections.name} className="sm:h-8 sm:w-64" height={120} width={120} />
       <div className="hidden md:flex space-x-6">
         <ul className="flex space-x-6">
           {sections.links.map((link, i) => (

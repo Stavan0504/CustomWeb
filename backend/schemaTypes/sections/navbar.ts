@@ -11,7 +11,7 @@ export default defineType({
         }),
         defineField( {
             name: 'logo',
-            type: 'string',
+            type: 'image',
             title: 'Logo',
         }),
         defineField({

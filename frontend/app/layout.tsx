@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import dynamic from "next/dynamic";
 import "./globals.css";
-
+import NavBar from "../components/navbar";
+const Navbar = dynamic(() => import('../components/navbar'))
 
 export const metadata: Metadata = {
   title: "Create Next App",
