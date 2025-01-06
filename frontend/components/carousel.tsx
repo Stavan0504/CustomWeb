@@ -51,8 +51,8 @@ export default function CarouselSection({ data }: any) {
                 ))}
               </CarouselContent>
               <div className="flex justify-between items-center mt-4">
-                <CarouselPrevious className="text-black p-2 hidden sm:block  bg-white rounded-full shadow hover:bg-gray-100 flex-shrink-0 sm:absolute sm:left-0 sm:ml-4 lg:ml-0 lg:static" />
-                <CarouselNext className="text-black p-2 bg-white hidden sm:block rounded-full shadow hover:bg-gray-100 flex-shrink-0 sm:absolute sm:right-0 sm:mr-4 lg:mr-0 lg:static" />
+                <CarouselPrevious aria-label="Previous Button" className="text-black p-2 hidden sm:block  bg-white rounded-full shadow hover:bg-gray-100 flex-shrink-0 sm:absolute sm:left-0 sm:ml-4 lg:ml-0 lg:static" />
+                <CarouselNext aria-label="Next Button" className="text-black p-2 bg-white hidden sm:block rounded-full shadow hover:bg-gray-100 flex-shrink-0 sm:absolute sm:right-0 sm:mr-4 lg:mr-0 lg:static" />
               </div>
             </Carousel>
           </div>
