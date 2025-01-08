@@ -3,6 +3,7 @@ export interface compare{
     title: string;
     description: CompareBlock[];
     button: string[]; 
+    products:[]
     content:[]
     }
   }

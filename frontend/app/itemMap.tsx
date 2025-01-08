@@ -20,8 +20,6 @@ export default function ItemMap({ data }: dataTypes) {
       {
         data.sections.map((section:any) => {
           switch (section._type) {
-            case "navbar":
-              return <Navbar sections={section} />;
             case "hero":
               return <Hero data={section} />;
             case "case":
@@ -40,8 +38,6 @@ export default function ItemMap({ data }: dataTypes) {
               return <Blogs data={section} />;
             case "scroll":
               return <Scroll data={section} />;
-            case "footerSection":
-              return <Footer data={section} />;
             default:
               return null;
           }

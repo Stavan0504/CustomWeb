@@ -6,11 +6,12 @@ import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../app/lib/client";
 import { PortableText } from '@portabletext/react';
 import { customComponents } from "./customComponents";
+import { FOOTER_QUERY } from "@/app/lib/queries";
 
-export default async function Footer({data}:FooterData) {
+export default async function Footer() {
     const builder = imageUrlBuilder(client);
     const urlFor = (source: SanityImageAssetDocument) => builder.image(source);
-
+    const data:FooterData = await client.fetch(FOOTER_QUERY)
   return (
     <footer>
       <div className="flex flex-col lg:flex-row justify-between items-center rounded-lg py-20 px-6 sm:px-10 md:px-20">

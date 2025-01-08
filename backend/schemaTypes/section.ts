@@ -24,7 +24,6 @@ export default defineType({
             type: 'array',
             title: 'Sections',
             of: [
-                { type:'navbar'},
                 { type:'hero' },
                 { type:'case' },
                 { type:'tech' },

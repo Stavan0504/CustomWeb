@@ -1,7 +1,7 @@
 import { ScrollTypes } from "./scrollTypes";
 import { SanityImageAssetDocument } from "next-sanity";
 export interface FooterData {
-data: {
+
   title: string;
   description: FeedbackBlock[];
   footerLogo: SanityImageAssetDocument
@@ -11,7 +11,7 @@ data: {
   footerItems: FooterItem[];
   footerEmail: string;
   footerCopyright: string;
-    }
+    
 }
 
 export interface FooterItem {

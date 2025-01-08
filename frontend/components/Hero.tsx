@@ -11,7 +11,7 @@ export default function Hero({ data }: Herotypes) {
     const urlFor = (source: SanityImageAssetDocument) => builder.image(source);
 
     return (
-        <section className="bg-slate-200 px-5 sm:px-[10%] my-10 h-full">
+        <section className=" bg-gradient-to-r from-[rgba(192,191,201,0.2)] via-slate-100 to-[#f3dee5] px-5 sm:px-[10%] h-full">
             <div className="flex flex-col sm:flex-row items-center justify-between w-full">
                 <div className="flex-1 text-center sm:text-left">
                     <div className=" scale-90 sm:scale-125 text-base">

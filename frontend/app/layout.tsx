@@ -3,7 +3,10 @@ import localFont from "next/font/local";
 import dynamic from "next/dynamic";
 import "./globals.css";
 import NavBar from "../components/navbar";
+import { HEADER_QUERY } from "./lib/queries";
+import { client } from "./lib/client";
 const Navbar = dynamic(() => import('../components/navbar'))
+const Footer = dynamic(() => import('../components/footers'))
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,15 +23,19 @@ export const metadata: Metadata = {
 //   variable: "--font-italic",
 // })
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
+  
   children: React.ReactNode;
 }) {
+  const sections = await client.fetch(HEADER_QUERY);
   return (
     <html lang="en">
       <body className={` antialiased`}>
+      <NavBar sections={sections}/>
         {children}
+      <Footer/>
       </body>
     </html>
   );
